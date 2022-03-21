@@ -5,7 +5,8 @@ import torchvision
 from torchvision.transforms import ToTensor
 
 def getFolderPath():
-    print("_PATH")
+    fileStream = open("..\\path.txt", "r")
+    print(fileStream.read())
 
 def main():
     getFolderPath()
