@@ -4,16 +4,18 @@ from torch.utils.data import DataLoader
 import torchvision
 from torchvision.transforms import ToTensor
 
-def getFolderPath():
+from fishdataset import FishDatasetLoader
+
+def getMasterFolderPath():
     fileStream = open("..\\path.txt", "r")
     return fileStream.read()
 
 def dataUpload():
-    path = getFolderPath()
-    dataset = torch.utils.data.IterableDataset() 
-    #trzeba skuonstruować klasę dziedziczącą po IterableDataset
-    trainloader = DataLoader(dataset)
-    return 0
+    master_folder_path = getMasterFolderPath()
+    train_images_path = master_folder_path + "\\train"
+
+    fish_loader = FishDatasetLoader(train_images_path)
+    fish_loader.doWork()
 
 
 def main():
