@@ -7,7 +7,7 @@ from torchvision.transforms import ToTensor
 from fishdataset import FishDatasetLoader
 
 def getMasterFolderPath():
-    fileStream = open("..\\path.txt", "r")
+    fileStream = open("..\\..\\path.txt", "r")
     return fileStream.read()
 
 def dataUpload():
