@@ -1,4 +1,0 @@
-url: https://github.com/JakubGazewski/WTUM_7_2022
-language: python 3.9
-package(example): pip
-library: pyTorch
