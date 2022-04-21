@@ -73,7 +73,7 @@ class FishDatasetLoader:
         epochs = 40
         steps = 0
         running_loss = 0
-        print_every = 100
+        print_every = 1 #changed from 100
         train_losses, test_losses = [], []
         for epoch in range(epochs):
             for inputs, labels in trainloader:
