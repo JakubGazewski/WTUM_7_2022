@@ -15,15 +15,14 @@ class FishDatasetLoader:
         valid_size = 0.2
 
         _transforms = transforms.Compose([
-            transforms.Resize((224, 224)), 
             transforms.RandomEqualize(1),
+            transforms.Resize((256, 256)), 
             transforms.ToTensor(), 
             transforms.Normalize(
                 mean=[0.5, 0.5, 0.5],
-                std = [0.25, 0.25, 0.25]
-            )
-
-            ]) #resizes to square idk if good
+                std=[0.2, 0.2, 0.2]
+            ),
+            ])
 
         train_data = datasets.ImageFolder(self.train_images_path, transform=_transforms)
         test_data = datasets.ImageFolder(self.train_images_path, transform=_transforms)
@@ -40,9 +39,9 @@ class FishDatasetLoader:
         test_sampler = SubsetRandomSampler(test_idx)
 
         trainloader = torch.utils.data.DataLoader(train_data,
-                    sampler=train_sampler, batch_size=64)
+                    sampler=train_sampler, batch_size=32)
         testloader = torch.utils.data.DataLoader(test_data,
-                    sampler=test_sampler, batch_size=64)
+                    sampler=test_sampler, batch_size=32)
 
         return trainloader, testloader
 
@@ -51,7 +50,7 @@ class FishDatasetLoader:
         print("creating model...")
         print(torch.cuda.is_available())
         device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-        model = models.resnet50(pretrained=False)
+        model = models.resnet50(pretrained=True)
         # print(model)
 
         for param in model.parameters():
@@ -71,10 +70,10 @@ class FishDatasetLoader:
     def trainModel(self, model, trainloader, testloader, device, optimizer, criterion):
         print("training...")
 
-        epochs = 1
+        epochs = 40
         steps = 0
         running_loss = 0
-        print_every = 1
+        print_every = 100
         train_losses, test_losses = [], []
         for epoch in range(epochs):
             for inputs, labels in trainloader:

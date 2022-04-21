@@ -19,6 +19,7 @@ def dataUpload():
 
 
 def main():
+    torch.cuda.empty_cache()
     dataUpload()
 
 main()
