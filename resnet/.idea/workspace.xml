@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="29dfcb86-3608-45dd-9659-cfe487d4406e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../vgg16_version2/vgg.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../vgg16_version2/vgg.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MyFishCNN/ryby.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../MyFishCNN/ryby.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vgg16_fish_identification/fish_identification.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../vgg16_fish_identification/fish_identification.ipynb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
