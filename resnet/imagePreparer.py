@@ -12,14 +12,21 @@ def getMasterFolderPath():
 
 def dataUpload():
     master_folder_path = getMasterFolderPath()
-    train_images_path = master_folder_path + "\\train"
+    train_images_path = master_folder_path + "\\train-nolimit"
 
     fish_loader = FishDatasetLoader(train_images_path)
     fish_loader.doWork()
 
 
 def main():
-    torch.cuda.empty_cache()
     dataUpload()
 
-main()
+def genMatrix():
+    master_folder_path = getMasterFolderPath()
+    train_images_path = master_folder_path + "\\train-nolimit"
+
+    fish_loader = FishDatasetLoader(train_images_path)
+    fish_loader.genMatrix()
+
+# main()
+genMatrix()
